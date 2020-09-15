@@ -1,10 +1,11 @@
-import { Module, HttpModule } from '@nestjs/common';
+import { forwardRef, HttpModule, HttpService, Module } from '@nestjs/common';
 import { SuccessrateController } from './successrate.controller';
 import { SuccessrateService } from './successrate.service';
 
 @Module({
   imports : [HttpModule],
   controllers: [SuccessrateController],
-  providers: [SuccessrateService]
+  providers: [SuccessrateService],
+  exports: [SuccessrateService]
 })
 export class SuccessrateModule {}
