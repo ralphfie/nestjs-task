@@ -10,17 +10,18 @@ constructor(private readonly mailerService: MailerService,
     private readonly successRate: SuccessrateService) {}
     
     public async example(): Promise<void> {
-        const test1: string = await this.successRate.getSuccessRateFiber();
+        const fiber: string = await this.successRate.getSuccessRateFiber();
+        const copper: string = await this.successRate.getSuccessRateCopper();
         this.mailerService.sendMail({
             to: 'rfie9393@gmail.com', // list of receivers
             from: 'camelia.rnd@gmail.com', // sender address
             subject: 'Schedule Success Rate Alarm ', // Subject line
             text: 'On-progress', // plaintext body
-            html: `Test: ${test1}`, // HTML body content
+            html: `Fiber Poller Success Rate (Less Than 90%) :- <br> ${fiber} <br><br> Copper Poller Success Rate (Less Than 85%):- <br> ${copper}`, // HTML body content
           })
           .then((success) => {
               console.log(success),
-              console.log(test1)
+              console.log(fiber)
           })
           .catch((err) => {
               console.log(err)

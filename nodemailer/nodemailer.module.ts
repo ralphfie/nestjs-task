@@ -1,9 +1,8 @@
-import { HttpModule, HttpService, Module } from '@nestjs/common';
+import {  Module } from '@nestjs/common';
 import { NodemailerController } from './nodemailer.controller';
 import { NodemailerService } from './nodemailer.service';
 import { HandlebarsAdapter } from '@nestjs-modules/mailer/dist/adapters/handlebars.adapter';
 import { MailerModule } from '@nestjs-modules/mailer';
-import { SuccessrateService } from 'src/successrate/successrate.service';
 import { SuccessrateModule } from 'src/successrate/successrate.module';
 
 @Module({

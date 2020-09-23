@@ -13,4 +13,10 @@ export class SuccessrateController {
      getSuccessRateFiber():Promise<String>{
        return this.client.getSuccessRateFiber();
      }
+
+     @Get('copper-data')
+     @UseInterceptors(ClassSerializerInterceptor)
+     getSuccessRateCopper():Promise<String>{
+       return this.client.getSuccessRateCopper();
+     }
 }
